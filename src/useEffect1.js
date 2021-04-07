@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 function Index() {
     /**
-     * 第二个参数空数组的时候：只有当真正离开index的时候才会触发解绑（return）,
+     * 第二个参数空数组的时候：只运行一次的 effect（仅在组件挂载和卸载时执行）
      * 也可以写参数[count]，只有当参数变化的时候才会执行return方法
      */
     useEffect(() => {
@@ -34,19 +34,21 @@ function Example() {
         console.log(`useEffect => your count ${count}`)
     })
 
-    return <div>
-        <p>your count {count}</p>
-        <button onClick={() => {setCount(count + 1)}}>click</button>
+    return (
+        <>
+            <p>your count {count}</p>
+            <button onClick={() => {setCount(count + 1)}}>click</button>
 
-        <Router>
-            <ul>
-                <li><Link to="/">首页</Link></li>
-                <li><Link to="/list/">列表</Link></li>
-            </ul>
-            <Route path="/" exact component={Index}/>
-            <Route path="/list" component={List} />
-        </Router>
-    </div>
+            <Router>
+                <ul>
+                    <li><Link to="/">首页</Link></li>
+                    <li><Link to="/list/">列表</Link></li>
+                </ul>
+                <Route path="/" exact component={Index}/>
+                <Route path="/list" component={List} />
+            </Router>
+        </>
+    )
 }   
 
 export default Example

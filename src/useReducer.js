@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, { useReducer } from 'react';
 
 function ReducerDemo() {
     /**
@@ -15,11 +15,13 @@ function ReducerDemo() {
         }
     },0)
 
-    return <div>
-        <h2>count === {count}</h2>
-        <button onClick={() => {dispatch('add')}}> add </button>
-        <button onClick={() => {dispatch('sub')}}> sub </button>
-    </div>
+    return (
+        <>
+            <h2>count === {count}</h2>
+            <button onClick={() => {dispatch('add')}}> add </button>
+            <button onClick={() => {dispatch('sub')}}> sub </button>
+        </>
+    )
 }
 
 export default ReducerDemo;

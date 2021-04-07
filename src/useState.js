@@ -11,11 +11,13 @@ function Example() {
     const [count, setCount] = useState(0);
     const [age, setAge] = useState(18);
 
-    return <div>
-        <p>your age {age}</p>
-        <p>your count {count}</p>
-        <button onClick={() => {setCount(count + 1)}}>click</button>
-    </div>
+    return (
+        <>
+            <p>your age {age}</p>
+            <p>your count {count}</p>
+            <button onClick={() => {setCount(count + 1)}}>click</button>
+        </>
+    )
 }   
 
 export default Example

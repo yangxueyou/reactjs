@@ -13,14 +13,16 @@ function Example() {
 
     const [count, setCount] = useState(0);
 
-    return <div>
-        <p>your count {count}</p>
-        <button onClick={() => {setCount(count + 1)}}>click</button>
-        <CountContext.Provider value={count}>
-            {/* 这里面放子组件，count被共享了 */}
-            <Counter/>
-        </CountContext.Provider>
-    </div>
+    return (
+        <>
+            <p>your count {count}</p>
+            <button onClick={() => {setCount(count + 1)}}>click</button>
+            <CountContext.Provider value={count}>
+                {/* 这里面放子组件，count被共享了 */}
+                <Counter/>
+            </CountContext.Provider>
+        </>
+    )
 }   
 
 export default Example
